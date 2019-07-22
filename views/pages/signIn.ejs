@@ -1,0 +1,25 @@
+<%- contentFor("main") %>
+<div id="container">
+    <h1>Hangout</h1>
+    <div id="inputs">
+        <div class="inputLabelPair">
+            <label for="username" id="labelU">Username</label>
+            <input id="username" class="inputs" name="username" autofocus>
+        </div>
+        <div class="inputLabelPair">
+            <label for="password" id="labelP">Password</label>
+            <div id="passwordEye">
+                <input id="password" class="inputs" name="password" type="password">
+                <img src="eyecon.png" id="eye">
+            </div>
+        </div>
+    </div>
+    <button id="submit">Sign In</button>
+    <div id="signUpPromo">
+        <span>Don't have an account yet? Click </span>
+        <a href="/signUp" id="a"> HERE </a>
+        <span> to make one</span>
+    </div>
+    <div id="warning"></div>
+    <script src="signIn.js"></script>
+</div>

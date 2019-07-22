@@ -1,0 +1,19 @@
+<%- contentFor ("main") %>
+<div id="container">
+    <div id="postHolder">
+        <div id="postAPost">
+            <img src="profileUploads/<%=picture%>" class="img">
+            <div id="header">This is my name</div>
+            <textarea id="postContent"></textarea>
+            <button id="submit">Submit</button>
+        </div>
+        <%for (var i = 0; i < posts.length; i++) {%>
+            <div id=<%=i%> class="posts">
+                <div class="headers"></div>
+                <div class="bodys"><%- posts[i].message %></div>
+                <div class="footers"></div>
+            </div>
+        <%}%>
+    </div>
+    <script src="posts.js"></script>
+</div>

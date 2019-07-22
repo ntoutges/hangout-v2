@@ -1,0 +1,51 @@
+#linkHolder {
+    width: 100%;
+    background-color: dodgerblue;
+    height: 40px;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    user-select: none;
+}
+
+.link {
+    user-select: none;
+    vertical-align: top;
+    margin-right: -5px;
+    height: 40px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+}
+
+.link:hover {
+    background-color: lightblue;
+}
+.linkText {
+    text-align: center;
+    color: black;
+    margin-top: 8px;
+    font-size: 20px;
+    height: 20px;
+}
+
+#piPie {
+    user-select: none;
+    width: 30px;
+}
+
+#backgroundColor {
+    margin-right: -5px;
+    background-color: brown;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    display: inline-block;
+}
+
+#containerMain {
+    margin-top: 10px;
+}
+
+#body {
+    height: 100%;
+}

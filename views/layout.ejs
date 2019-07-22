@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="jquery.min.js"></script>
+        <title>Hangout - <%=title%></title>
+        <link rel="stylesheet" href=layout.css type="text/css" />
+        <link rel="stylesheet" href=<%=href%> type="text/css" />
+        <link rel="icon" href="pi pie.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap" rel="stylesheet">
+        
+        <link rel="prefetch" href="eyecon.png">
+        <link rel="prefetch" href="whiteeyecon.png">
+    </head>
+    <body id="body">
+        <%if (loggedIn == true) {%>
+            <div id="linkHolder">
+                <div id="backgroundColor">
+                <img src="pi pie.png" id="piPie">
+                </div>
+                <a href="/home" class="link" id="home">
+                    <div class="linkText">
+                        Home
+                    </div>
+                </a>
+                <a href="/posts" class="link" id="posts">
+                    <div class="linkText">
+                        Posts
+                    </div>
+                </a>
+            </div>
+        <%}%>
+        <div id="containerMain">
+            <%- defineContent("main") %>
+        </div>
+        <script src="layout.js"></script>
+    </body>
+</html>

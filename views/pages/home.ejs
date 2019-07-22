@@ -1,0 +1,123 @@
+<%- contentFor("main") %>
+<div id="container">
+    <div id="sidebar">
+        <div id="profilePicture">
+            <img src=<%=image%> id="img" draggable="false">
+        </div>
+        <div id="displayNameCont">
+            <div id="showSaved"></div>
+            <input id="displayName" actualName="<%=username%>" placeholder="Display Name" value="<%=displayName%>" maxlengh="520">
+            <div id="textWidth"><%=displayName%></div>
+        </div>
+        <div id="shortDesc">
+            <textarea id="shortDescText" placeholder="A short description of you" maxlength="170"></textarea>
+            <div id="savedShortDesc">Saving</div>
+            <div id="letterCounter">170</div>
+        </div>
+    </div>
+        <div id="mainSection">
+            <div id="tabs">
+                <div id="settings" class="tabs">
+                    <span class="text"> 
+                        Settings
+                    </span>
+                </div>
+                <div id="a" class="tabs">
+                    <span class="text">
+                        Stuff
+                    </span>
+                </div>
+            </div>
+        <div id="content">
+            <div id="settingsCont">
+                <div id="themeCont">
+                    <label for="darkMode" id="darkModeL" class="changeColor" >Theme: </label>
+                    <%if (settings.darkMode == "true") {%>
+                        <select id="theme" class="changeColor">
+                            <option id="day">Day</option>
+                            <option id="night" selected="selected">Night</option>
+                        </select>
+                    <%} else {%>
+                        <select id="theme" value="night" class="changeColor">
+                            <option id="day" selected="selected">Day</option>
+                            <option id="night">Night</option>
+                        </select>
+                    <%}%>
+                </div>
+                <div class="accountPrivacy" class="changeColor">
+                    <div id="followingPrivacy" class="changeColor">
+                        <label for="checkbox" id="checkboxL" class="changeColor">Private Following</label>
+                        <%if (settings.accountPrivacy.followingPrivacy == "true") {%>
+                            <input type="checkbox" id="checkbox" name="checkbox" checked>
+                            <div id="descFollowing" class="changeColor">Approval necessary for others to follow you</div>
+                        <%} else {%>
+                            <input type="checkbox" id="checkbox" name="checkbox">
+                            <div id="descFollowing" class="changeColor">Anyone can follow you</div>
+                        <%}%>
+                    </div>
+                    <div id="viewingPrivacy">
+                        <label for="postPrivacy" class="changeColor">Private Posts</label>
+                        <select id="postPrivacyOption"class="changeColor">
+                            <option value="0" <%if (settings.accountPrivacy.viewingStatus == "0") {%> selected="selected" <%}%>>No</option>
+                            <option value="1" <%if (settings.accountPrivacy.viewingStatus == "1") {%> selected="selected" <%}%>>Mostly</option>
+                            <option value="2" <%if (settings.accountPrivacy.viewingStatus == "2") {%> selected="selected" <%}%>>Yes</option>
+                        </select>
+                        <%if(settings.accountPrivacy.viewingStatus == "0") {%>
+                            <div id="descViewing" class="changeColor">Anyone can see your posts</div>
+                        <%} else if(settings.accountPrivacy.viewingStatus == "1") {%>
+                            <div id="descViewing" class="changeColor">Only friends can see your posts</div>
+                        <%} else {%>
+                            <div id="descViewing" class="changeColor">Nobody can see your posts</div>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="accountPrivacy">
+                    <div id="useRealName">
+                        <label for="useRealNameOpt" class="changeColor">Use real name</label>
+                        <select name="useRealNameOpt" id="useRealNameOpt">
+                            <option value="2" <%if (settings.accountPrivacy.actualUsername == "2") {%> selected="selected" <%}%>>No</option>
+                            <option value="1" <%if (settings.accountPrivacy.actualUsername == "1") {%> selected="selected" <%}%>>Maybe</option>
+                            <option value="0" <%if (settings.accountPrivacy.actualUsername == "0") {%> selected="selected" <%}%>>Yes</option>
+                        </select>
+                        <div id="descNameCont" class="changeColor">
+                            <div id="descName" class="changeColor"></div>
+                            <span id="descNameBr" class="changeColor"></span>
+                            <span id="descNameBr2" class="changeColor"></span>
+                        </div>
+                    </div>
+                    <div id="viewingAccountPrivacy">
+                        <label for="privateAccount" class="changeColor">Private Account</label>
+                        <select id="privateAccount" name="account" class="changeColor">
+                            <option value="0" <%if (settings.accountPrivacy.accountStatus == "0") {%> selected="selected" <%}%>>No</option>
+                            <option value="1" <%if (settings.accountPrivacy.accountStatus == "1") {%> selected="selected" <%}%>>Maybe</option>
+                            <option value="2" <%if (settings.accountPrivacy.accountStatus == "2") {%> selected="selected" <%}%>>Yes</option>
+                        </select>
+                            <%if(settings.accountPrivacy.descAccount == "0") {%>
+                                <div id="descAccount"class="changeColor">Anyone can see your account</div>
+                            <%} else if(settings.accountPrivacy.descAccount == "1") {%>
+                                <div id="descAccount" class="changeColor">Only friends can see your account</div>
+                            <%} else {%>
+                                <div id="descAccount" class="changeColor">Nobody can see your account</div>
+                            <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popUp">
+        <div id="messageBox">
+            <h3 id="message">Change Profile Picture</h3>
+            <form action="/profile" method="post" enctype="multipart/form-data" id="form">
+                <input type="file" name="file" id="file">
+                <input type="submit" id="submit">
+            </form>
+            <div id="previewImgCont">
+                <img src="/profileUploads/no-profile-picture.png" id="previewImg">
+            </div>
+            <div id="exitOut">
+                X
+            </div>
+        </div>
+    </div>
+    <script src="home.js"></script>
+</div>

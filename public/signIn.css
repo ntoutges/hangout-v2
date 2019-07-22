@@ -1,0 +1,94 @@
+html {
+    -webkit-background-size: cover;
+    height: 100%;
+}
+
+#body {
+    background-image: radial-gradient(rgb(0, 200, 255) 20%, blue);
+}
+
+#containerMain {
+    text-align: center;
+}
+
+#container {
+    margin-top: 100px;
+    border-style: solid;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.inputs {
+    color: white;
+    background: transparent;
+    width: 220px;
+    margin-left: 10px;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.inputLabelPair {
+    margin-top: 10px;
+}
+
+label {
+    font-size: 30px;
+    width: 130px;
+    display: inline-block;
+}
+
+#submit {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 30px;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 1px;
+}
+
+h1 {
+    font-size: 70px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+#warning {
+    color: red;
+    font-size: 20px;
+}
+
+#a {
+    color: green;
+    text-decoration: none;
+}
+
+#a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#signUpPromo {
+    color: black;
+    margin-top: 10px;
+}
+
+#eye {
+    width: 40px;
+    position: absolute;
+    top: 0px;
+    left: 190px;
+    display: none;
+}
+
+#passwordEye {
+    display: inline-block;
+    position: relative;
+}
+
+#password {
+    width: 180px;
+    padding-right: 40px;
+}

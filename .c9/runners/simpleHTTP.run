@@ -1,0 +1,10 @@
+// Sets up a HTML script runner.
+{
+  "script": [
+    "~/simpleHTTP"
+  ],
+  "selector": "^.*\\.(html|css|js)$",
+  "working_dir": "$project_path",
+  "info": "Starting HTTP built-in web server...",
+  "trackId": "HTTPServer"
+}
